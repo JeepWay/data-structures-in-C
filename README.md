@@ -3,21 +3,24 @@ This project contains implementations of various data structures in C.
 
 ## Stack
 ```bash
-make test target=test_stack_int
+make test TARGET=test_stack_int
 
 make clean
 ```
 
-
 ## Queue
 ```bash
-make test traget=test_queue_circular1
+make test TARGET=test_queue_circular1
 
-make test target=test_queue_circular2
+make test TARGET=test_queue_circular2
 ```
 
+## Linked List
+```bash
+make test TARGET=test_single_list
 
-
+make test TARGET=test_double_list
+```
 
 
 
