@@ -22,5 +22,10 @@ make test TARGET=test_single_list
 make test TARGET=test_double_list
 ```
 
+## Heap
+```bash
+make test TARGET=test_min_heap
 
+make test TARGET=test_max_heap
+```
 
