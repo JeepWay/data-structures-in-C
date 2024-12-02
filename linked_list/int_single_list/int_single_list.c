@@ -2,20 +2,18 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <assert.h>
-#include "general_single_list.h"
+#include <limits.h>
+#include "int_single_list.h"
 
-ListNode* createListNode(void* data) {
+ListNode* createListNode(int data) {
     ListNode *node = (ListNode*)malloc(sizeof(ListNode));
-    if (node) {
-        node->data = data;
-        node->next = NULL;
-    }
+    node->data = data;
+    node->next = NULL;
     return node;
 }
 
-ListNode* addListNode(ListNode* head, void* data) {
+ListNode* addListNode(ListNode* head, int data) {
     assert(head != NULL);
-    assert(data != NULL);
 
     ListNode* tmp = head;
     while (tmp->next) {
@@ -40,20 +38,27 @@ void freeLinkedList(ListNode* head) {
     while (cur) {
         ListNode* node = cur;
         cur = cur->next;
-        if (node->data) {
-            free(node->data);
-        }
         free(node);
     }
 }
 
-void* getNthNode(ListNode* head, int n) {
+void printLinkedList(ListNode* head) {
+    ListNode* tmp = head;
+    printf("Print from head: ");
+    while (tmp) {
+        printf("%d ", tmp->data);
+        tmp = tmp->next;
+    }
+    printf("\n");
+}
+
+int getNthNode(ListNode* head, int n) {
     ListNode* tmp = head;
     for (int i = 0; i < n; i++) {
         if (tmp->next) {
             tmp = tmp->next;
         } else {
-            return NULL;
+            return INT_MAX; // if n is out of range
         }
     }
     return tmp->data;

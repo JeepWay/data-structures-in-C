@@ -1,3 +1,6 @@
+#ifndef SINGLE_LIST_H
+#define SINGLE_LIST_H
+
 typedef struct listnode {
     void *data;
     struct listnode *next;
@@ -29,3 +32,5 @@ ListNode* invertLinkedList(ListNode* head);     // 206. Reverse Linked List
 ListNode* rotateRight(ListNode* head, int k);   // 61. Rotate List
 
 ListNode* oddEvenList(ListNode* head);          // 328. Odd Even Linked List
+
+#endif  // SINGLE_LIST_H

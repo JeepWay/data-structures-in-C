@@ -17,6 +17,9 @@ int_stack: stack/int_stack/main.o stack/int_stack/int_stack.o
 general_single_linked_list: linked_list/general_single_list/main.o linked_list/general_single_list/general_single_list.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+int_single_linked_list: linked_list/int_single_list/main.o linked_list/int_single_list/int_single_list.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 
