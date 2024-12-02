@@ -17,7 +17,7 @@ bool isFullStack(Stack* s);
 
 bool isEmptyStack(Stack* s);
 
-void pushStack(Stack* s, void* element);
+void pushStack(Stack* s, void* data);
 
 void popStack(Stack* s);
 

@@ -15,8 +15,8 @@ bool isFullStack(Stack *s) {
     return(s->topIndex >= (s->capacity - 1));
 }
 
-bool isEmptyStack(Stack* stack) {
-    return stack->topIndex == EMPTY_INDEX;
+bool isEmptyStack(Stack* s) {
+    return s->topIndex == EMPTY_INDEX;
 }
 
 void pushStack(Stack* s, void* data) {
@@ -53,5 +53,3 @@ void freeStack(Stack* s) {
     free(s->datas);
     free(s);
 }
-
-

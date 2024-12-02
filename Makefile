@@ -10,6 +10,9 @@ test: $(TARGET)
 
 general_stack: stack/general_stack/main.o stack/general_stack/general_stack.o
 	@$(CC) $(CFLAGS) -o $@ $^
+	
+int_stack: stack/int_stack/main.o stack/int_stack/int_stack.o
+	@$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
 	@$(CC) -c -o $@ $<
