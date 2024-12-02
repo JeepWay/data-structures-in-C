@@ -26,6 +26,9 @@ general_double_linked_list: linked_list/general_double_list/main.o linked_list/g
 int_double_linked_list: linked_list/int_double_list/main.o linked_list/int_double_list/int_double_list.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+general_circular_array_n_slot_queue: queue/general_circular_array_n_slot_queue/main.o queue/general_circular_array_n_slot_queue/general_circular_array_n_slot_queue.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 
