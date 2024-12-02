@@ -20,6 +20,12 @@ general_single_linked_list: linked_list/general_single_list/main.o linked_list/g
 int_single_linked_list: linked_list/int_single_list/main.o linked_list/int_single_list/int_single_list.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+general_double_linked_list: linked_list/general_double_list/main.o linked_list/general_double_list/general_double_list.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
+int_double_linked_list: linked_list/int_double_list/main.o linked_list/int_double_list/int_double_list.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 

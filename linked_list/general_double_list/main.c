@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <assert.h>
-#include "general_single_list.h"
+#include "general_double_list.h"
 
 typedef struct {
     char* name;
@@ -17,8 +17,8 @@ void printPerson(const Person *data) {
     printf("(%s, %d), ", data->name, data->age);
 }
 
-void test_int_single_list() {
-    printf("--------------- Start Test Int Single list ---------------\n");
+void test_int_double_list() {
+    printf("--------------- Start Test Int Double list ---------------\n");
     int* a = (int*)malloc(sizeof(int)); *a = 10;
     int* b = (int*)malloc(sizeof(int)); *b = 20;
     int* c = (int*)malloc(sizeof(int)); *c = 30;
@@ -34,25 +34,12 @@ void test_int_single_list() {
      * Print from head: 10 20 30 40
      */
 
-    assert(*(int*)getNthNode(head, 0) == 10);
-    assert(*(int*)getNthNode(head, 1) == 20);
-    assert(*(int*)getNthNode(head, 2) == 30);
-    assert(*(int*)getNthNode(head, 3) == 40);
-    assert(getNthNode(head, 4) == NULL);
-
-    head = invertLinkedList(head);
-    assert(lengthLinkedList(head) == 4);
-    PRINT_LINKED_LIST(int, head, printInt);
-    /**
-     * Print from head: 40 30 20 10
-     */
-
     freeLinkedList(head);
     printf("----------------------------------------------------------\n\n");
 }
 
-void test_person_single_list() {
-    printf("------------------ Start Test Person Single list ------------------\n");
+void test_person_double_list() {
+    printf("------------------ Start Test Person Double list ------------------\n");
     Person* p1 = (Person*)malloc(sizeof(Person));
     p1->name = "Alice";     p1->age = 10;  
     Person* p2 = (Person*)malloc(sizeof(Person));
@@ -73,24 +60,13 @@ void test_person_single_list() {
      * Print from head: (Alice, 10), (Bob, 20), (Cindy, 30), (David, 40),
      */
 
-    assert(((Person*)getNthNode(head, 0))->name == "Alice");
-    assert(((Person*)getNthNode(head, 0))->age == 10);
-    assert(((Person*)getNthNode(head, 1))->name == "Bob");
-    assert(((Person*)getNthNode(head, 2))->name == "Cindy");
-    assert(((Person*)getNthNode(head, 3))->name == "David");
-
-    head = invertLinkedList(head);
-    assert(lengthLinkedList(head) == 4);
-    PRINT_LINKED_LIST(Person, head, printPerson);
-    /**
-     * Print from head: (David, 40), (Cindy, 30), (Bob, 20), (Alice, 10),
-     */
     freeLinkedList(head);
     printf("-------------------------------------------------------------------\n\n");
 }
 
-int main() {
-    test_int_single_list();
-    test_person_single_list();
+
+int main(void) {
+    test_int_double_list();
+    test_person_double_list();
     return 0;
 }
