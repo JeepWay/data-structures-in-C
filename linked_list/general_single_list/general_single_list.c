@@ -1,47 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "single_list.h"
+#include <assert.h>
+#include "general_single_list.h"
 
-ListNode* createListNode(int data) {
+ListNode* createListNode(void* data) {
     ListNode *node = (ListNode*)malloc(sizeof(ListNode));
-    node->data = data;
-    node->next = NULL;
+    if (node) {
+        node->data = data;
+        node->next = NULL;
+    }
     return node;
 }
 
-ListNode* addListNode(ListNode* head, int data) {
+ListNode* addListNode(ListNode* head, void* data) {
+    assert(head != NULL);
+    assert(data != NULL);
+
     ListNode* tmp = head;
     while (tmp->next) {
         tmp = tmp->next;
     }
     tmp->next = createListNode(data);
-    return head;
-}
-
-int getNthNode(ListNode* head, int n) {
-    ListNode* tmp = head;
-    for (int i = 0; i < n; i++) {
-        if (tmp->next) {
-            tmp = tmp->next;
-        } else {
-            return -999;
-        }
-    }
-    return tmp->data;
-}
-
-ListNode* invertLinkedList(ListNode* head) {
-    ListNode* r = NULL;
-    ListNode* q = NULL;
-    ListNode* p = head;
-    while (p) {
-        r = q;
-        q = p;
-        p = p->next;
-        q->next = r;
-    }
-    head = q;
     return head;
 }
 
@@ -56,10 +36,13 @@ int lengthLinkedList(ListNode* head) {
 }
 
 void freeLinkedList(ListNode* head) {
-    ListNode* tmp = head;
-    while (tmp) {
-        ListNode* node = tmp;
-        tmp = tmp->next;
+    ListNode* cur = head;
+    while (cur) {
+        ListNode* node = cur;
+        cur = cur->next;
+        if (node->data) {
+            free(node->data);
+        }
         free(node);
     }
 }
@@ -74,6 +57,31 @@ void printLinkedList(ListNode* head) {
     printf("\n");
 }
 
+void* getNthNode(ListNode* head, int n) {
+    ListNode* tmp = head;
+    for (int i = 0; i < n; i++) {
+        if (tmp->next) {
+            tmp = tmp->next;
+        } else {
+            return NULL;
+        }
+    }
+    return tmp->data;
+}
+
+ListNode* invertLinkedList(ListNode* head) {
+    ListNode *last = NULL;
+	ListNode *middle = NULL;
+	ListNode *front = head;
+	while(front != NULL){
+		last = middle;
+		middle = front;
+		front = front->next;
+		middle->next = last;
+	}
+	head = middle;
+	return head;
+}
 
 ListNode* rotateRight(ListNode* head, int k) {
     if(!head || !head->next)    return head;
@@ -120,3 +128,4 @@ ListNode* oddEvenList(ListNode* head) {
     odd->next = even_head;
     return head;
 }
+
