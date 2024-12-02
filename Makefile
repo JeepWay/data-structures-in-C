@@ -32,6 +32,9 @@ general_circular_array_n_slot_queue: queue/general_circular_array_n_slot_queue/m
 general_circular_array_n-1_slot_queue: queue/general_circular_array_n-1_slot_queue/main.o queue/general_circular_array_n-1_slot_queue/general_circular_array_n-1_slot_queue.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+general_single_list_queue: queue/general_single_list_queue/main.o queue/general_single_list_queue/general_single_list_queue.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 
