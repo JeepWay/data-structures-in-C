@@ -1,9 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -g
 
-OBJS_STACK = stack/stack.o stack/stack_char.o stack/stack_string.o stack/stack_int.o 
-
-TARGET = test_stack
+TARGET = general_stack
 
 test: $(TARGET)
 	./$<
@@ -33,6 +31,12 @@ general_circular_array_n-1_slot_queue: queue/general_circular_array_n-1_slot_que
 	@$(CC) $(CFLAGS) -o $@ $^
 
 general_single_list_queue: queue/general_single_list_queue/main.o queue/general_single_list_queue/general_single_list_queue.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
+int_min_heap: heap/int_min_heap/main.o heap/int_min_heap/int_min_heap.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
+int_max_heap: heap/int_max_heap/main.o heap/int_max_heap/int_max_heap.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
