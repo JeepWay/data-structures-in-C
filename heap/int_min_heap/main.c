@@ -26,7 +26,6 @@ int main() {
     printf("Extracted min of minheap: %d\n", extractMinOfMinHeap(heap)); // 13
     levelOrderTraversal(heap); // 20 30 25 40
 
-    free(heap->arr);
-    free(heap);
+    freeHeap(heap);
     return 0;
 }

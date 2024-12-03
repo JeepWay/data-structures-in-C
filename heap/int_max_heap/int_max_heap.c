@@ -21,9 +21,7 @@ void insertMaxHeap(MaxHeap* h, int key) {
     
     int cur = h->size - 1;
     while(cur >= 0 && h->arr[PARENT(cur)] < h->arr[cur]) {
-        int temp = h->arr[PARENT(cur)];
-        h->arr[PARENT(cur)] = h->arr[cur];
-        h->arr[cur] = temp;
+        SWAP(int, h->arr[PARENT(cur)], h->arr[cur]);
         cur = PARENT(cur);
     }
 }
