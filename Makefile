@@ -42,6 +42,10 @@ int_max_heap: heap/int_max_heap/main.o heap/int_max_heap/int_max_heap.o
 general_min_heap: heap/general_min_heap/main.o heap/general_min_heap/general_min_heap.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+general_min_max_heap: heap/general_min_max_heap/main.o heap/general_min_max_heap/general_min_max_heap.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 
