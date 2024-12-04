@@ -45,6 +45,9 @@ general_min_heap: heap/general_min_heap/main.o heap/general_min_heap/general_min
 general_min_max_heap: heap/general_min_max_heap/main.o heap/general_min_max_heap/general_min_max_heap.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+general_deap: heap/general_deap/main.o heap/general_deap/general_deap.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 
 %.o: %.c
 	@$(CC) -c -o $@ $<
