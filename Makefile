@@ -51,6 +51,9 @@ general_deap: heap/general_deap/main.o heap/general_deap/general_deap.o
 disjoint_set: set/disjoint_set/main.o set/disjoint_set/set.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+Kruskal_mst: graph/Kruskal_mst/main.o graph/Kruskal_mst/mst.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 
 %.o: %.c
 	@$(CC) -c -o $@ $<
