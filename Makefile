@@ -48,6 +48,9 @@ general_min_max_heap: heap/general_min_max_heap/main.o heap/general_min_max_heap
 general_deap: heap/general_deap/main.o heap/general_deap/general_deap.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+disjoint_set: set/disjoint_set/main.o set/disjoint_set/set.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 
 %.o: %.c
 	@$(CC) -c -o $@ $<
