@@ -48,6 +48,9 @@ general_min_max_heap: heap/general_min_max_heap/main.o heap/general_min_max_heap
 general_deap: heap/general_deap/main.o heap/general_deap/general_deap.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+general_min_leftist_tree: heap/general_min_leftist_tree/main.o heap/general_min_leftist_tree/general_min_leftist_tree.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 disjoint_set: set/disjoint_set/main.o set/disjoint_set/set.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
@@ -58,7 +61,19 @@ Kruskal_mst: graph/Kruskal_mst/main.o graph/Kruskal_mst/mst.o
 %.o: %.c
 	@$(CC) -c -o $@ $<
 
+ifeq ($(OS), Windows_NT)
+    OS_TYPE = Window
+else
+    OS_TYPE = Linux
+endif
+
 clean:
-	@echo "clean project"
-	del /S *.o  
-	del /S *.exe
+ifeq ($(OS_TYPE), Window)
+	@echo Clean up *.o and *.exe file on $(OS_TYPE)
+	@del /s /q *.o
+	@del /s /q *.exe
+else
+	@echo "Clean up *.o and *.exe file on $(OS_TYPE)"
+	@find . -type f -name "*.o" -delete
+	@find . -type f -name "*.exe" -exec rm -f {} +
+endif
