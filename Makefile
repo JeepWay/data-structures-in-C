@@ -57,6 +57,11 @@ disjoint_set: set/disjoint_set/main.o set/disjoint_set/set.o
 Kruskal_mst: graph/Kruskal_mst/main.o graph/Kruskal_mst/mst.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+binary_tree: tree/binary_tree/main.o tree/binary_tree/binary_tree.o  stack/general_stack/general_stack.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
+binary_search_tree: tree/binary_search_tree/main.o tree/binary_search_tree/binary_search_tree.o
+	@$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
 	@$(CC) -c -o $@ $<
