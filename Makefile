@@ -63,6 +63,12 @@ binary_tree: tree/binary_tree/main.o tree/binary_tree/binary_tree.o  stack/gener
 binary_search_tree: tree/binary_search_tree/main.o tree/binary_search_tree/binary_search_tree.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+graph_bfs: graph/bfs/main.o graph/bfs/bfs.o queue/general_circular_array_n_slot_queue/general_circular_array_n_slot_queue.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
+graph_dfs: graph/dfs/main.o graph/dfs/dfs.o stack/general_stack/general_stack.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 
