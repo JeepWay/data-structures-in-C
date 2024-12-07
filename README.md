@@ -23,6 +23,8 @@ This project contains implementations of various data structures in C.
 - **[Sets](https://github.com/JeepWay/data-structures-in-C/tree/main/set)**
   - Disjoint Sets [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/set/disjoint_set)
 - **[Graphs](https://github.com/JeepWay/data-structures-in-C/tree/main/graph)**
+  - BFS [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/bfs)
+  - DFS [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/dfs)
   - Kruskal's Minimum Spanning Tree [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/Kruskal_mst)
 - **[Hashing]()**
 - **[Heap Structures](https://github.com/JeepWay/data-structures-in-C/tree/main/heap)**
@@ -86,6 +88,19 @@ This project contains implementations of various data structures in C.
 * Disjoint sets [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/set/disjoint_set/main.c)
     ```bash
     make test TARGET=disjoint_set
+    ```
+### Graphs
+* BFS [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/graph/bfs/main.c)
+    ```bash
+    make test TARGET=graph_bfs
+    ```
+* DFS [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/graph/dfs/main.c)
+    ```bash
+    make test TARGET=graph_dfs
+    ```
+* Kruskal's Minimum Spanning Tree [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/graph/Kruskal_mst/main.c)
+    ```bash
+    make test TARGET=Kruskal_mst
     ```
 ### Hashing
 ### Heap Structures
