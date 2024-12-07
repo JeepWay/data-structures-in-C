@@ -69,6 +69,9 @@ graph_bfs: graph/bfs/main.o graph/bfs/bfs.o queue/general_circular_array_n_slot_
 graph_dfs: graph/dfs/main.o graph/dfs/dfs.o stack/general_stack/general_stack.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+hashtable_list: hashing/hashtable_list/main.o hashing/hashtable_list/hashtable_list.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 

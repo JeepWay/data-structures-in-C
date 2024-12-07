@@ -2,7 +2,11 @@
 ![License](https://img.shields.io/github/license/JeepWay/data-structures-in-C)
 ![Language](https://img.shields.io/badge/Language-C-blue)
 
-This project contains implementations of various data structures in C.
+This repository contains implementations of various data structures in C, based on the concepts and examples presented in the book ["Fundamentals of Data Structures in C"](https://caucse.club/wp-content/uploads/2022/05/Fundamentals-of-Data-Structures-in-C-Ellis-Horowitz-Sartaj-Sahni-etc.-.pdf) by Ellis Horowitz, Sartaj Sahni, and Susan Anderson-Freed.
+
+Each data structure is implemented in a separate directory, with a `main.c` file that demonstrates the usage of the data structure. For example, the stack of general data type using arrays is in the [`stack/general_stack`](https://github.com/JeepWay/data-structures-in-C/tree/main/stack/general_stack) directory, with the [`main.c`](https://github.com/JeepWay/data-structures-in-C/blob/main/stack/general_stack/main.c) file demonstrating the usage of the stack.
+
+The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makefile) in the root directory can be used to compile and run the demo programs for each data structure according to the `TARGET` specified, you can find them in the [usage section](https://github.com/JeepWay/data-structures-in-C?tab=readme-ov-file#makefile-usage) below.
 
 ## Table of Contents
 - **[Stacks](https://github.com/JeepWay/data-structures-in-C/tree/main/stack)**
@@ -26,7 +30,8 @@ This project contains implementations of various data structures in C.
   - BFS [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/bfs)
   - DFS [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/dfs)
   - Kruskal's Minimum Spanning Tree [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/Kruskal_mst)
-- **[Hashing]()**
+- **[Hashing](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing)**
+  - Hash Table using linked list [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_list)
 - **[Heap Structures](https://github.com/JeepWay/data-structures-in-C/tree/main/heap)**
   - Min Heap (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_heap)
   - Min Heap (int) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/int_min_heap)
@@ -103,6 +108,10 @@ This project contains implementations of various data structures in C.
     make test TARGET=Kruskal_mst
     ```
 ### Hashing
+* Hash table using linked list [📃](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_list/main.c)
+    ```bash
+    make test TARGET=hashtable_list
+    ```
 ### Heap Structures
 * Min heap of `general` data type [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/heap/general_min_heap/main.c)
     ```bash
