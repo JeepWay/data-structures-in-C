@@ -72,6 +72,9 @@ graph_dfs: graph/dfs/main.o graph/dfs/dfs.o stack/general_stack/general_stack.o
 hashtable_list: hashing/hashtable_list/main.o hashing/hashtable_list/hashtable_list.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+binomial_heap: heap/binomial_heap/main.o heap/binomial_heap/binomial_heap.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 

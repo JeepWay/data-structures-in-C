@@ -39,6 +39,7 @@ The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makef
   - Min-Max Heap (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_max_heap)
   - Deap (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_deap)
   - Min Leftist tree (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_leftist_tree)
+  - Binoimial Heap [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/binomial_heap)
 
 ## Makefile Usage
 ### Stacks
@@ -136,6 +137,10 @@ The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makef
 * Min leftist tree of `general` data type [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/heap/general_min_leftist_tree/main.c)
     ```bash
     make test TARGET=general_min_leftist_tree
+    ```
+* Binomial heap [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/heap/binomial_heap/main.c)
+    ```bash
+    make test TARGET=binomial_heap
     ```
 ### Clean up object and executable files
 ```bash
