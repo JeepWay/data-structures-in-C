@@ -32,6 +32,8 @@ bino_node_t* merge_bino_node(bino_node_t* b1, bino_node_t* b2);
 
 bino_node_t* meld_bino_heap(heap_t* h1, heap_t* h2);
 
+void level_order_bino_heap(heap_t* heap);
+
 void print_bino_heap(heap_t* heap);
 
 void _print_tree_table(bino_node_t* tree_table[]);  // For debugging

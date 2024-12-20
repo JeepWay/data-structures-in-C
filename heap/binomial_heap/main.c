@@ -21,6 +21,12 @@ void test_2_insertions_case1() {
          /
         2
     */
+
+    level_order_bino_heap(heap);
+    /*
+    Min tree from top linked list
+    Degree 1: 1 2 
+    */
     printf("--------------------------------------------\n\n");
 }
 
@@ -40,6 +46,12 @@ void test_2_insertions_case2() {
           1
          /
         2
+    */
+
+    level_order_bino_heap(heap);
+    /*
+    Min tree from top linked list
+    Degree 1: 1 2 
     */
     printf("--------------------------------------------\n\n");
 }
@@ -67,11 +79,19 @@ void test_3_insertions_case1() {
          /
         2
     */
+
     print_bino_heap(heap);
     /*
     Min tree from min node
     key: 1, degree: 1
     key: 3, degree: 0
+    */
+
+    level_order_bino_heap(heap);
+    /*
+    Min tree from top linked list
+    Degree 1: 1 2
+    Degree 0: 3
     */
     printf("--------------------------------------------\n\n");
 }
@@ -109,6 +129,12 @@ void test_4_insertions_case1() {
         |
         4
     */
+
+    level_order_bino_heap(heap);
+    /*
+    Min tree from top linked list
+    Degree 2: 1 3 2 4
+    */
     printf("--------------------------------------------\n\n");
 }
 
@@ -133,6 +159,7 @@ void test_many_insertions_case1(){
      |
     20       
     */
+
     print_bino_heap(heap);
     /*
     Min tree from min node
@@ -140,17 +167,11 @@ void test_many_insertions_case1(){
     key: 22, degree: 0
     */
 
-    bino_node_t* cur = heap->head->child;
-    printf("Min tree from min node\n");
-    do {
-        printf("key: %d, degree: %d\n", cur->key, cur->degree);
-        cur = cur->sibling;
-    } while (cur != heap->head->child);
+    level_order_bino_heap(heap);
     /*
-    Min tree from min node
-    key: 5, degree: 2
-    key: 6, degree: 1
-    key: 14, degree: 0    
+    Min tree from top linked list
+    Degree 3: 4 5 6 14 10 18 12 20
+    Degree 0: 22
     */
     printf("--------------------------------------------\n\n");
 }
@@ -194,6 +215,11 @@ void test_insertions_delete_case1() {
     key: 5, degree: 3
     */
 
+    level_order_bino_heap(heap);
+    /*
+    Degree 3: 5 6 10 18 14 12 20 22
+    */
+
     bino_node_t* cur = heap->head->child;
     printf("Min tree from min node\n");
     do {
@@ -204,7 +230,7 @@ void test_insertions_delete_case1() {
     Min tree from min node
     key: 6, degree: 2
     key: 10, degree: 1
-    key: 18, degree: 0  
+    key: 18, degree: 0
     */
     printf("--------------------------------------------\n\n");
 }

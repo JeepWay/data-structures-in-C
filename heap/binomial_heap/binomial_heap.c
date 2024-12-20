@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <limits.h>
 #include "binomial_heap.h"
+#include "../../queue/general_circular_array_n_slot_queue/general_array_queue.h"
 
 bino_node_t* create_bino_node(int key) {
     bino_node_t* node = malloc(sizeof(bino_node_t));
@@ -153,6 +154,36 @@ bino_node_t* meld_bino_heap(heap_t* h1, heap_t* h2) {
     return min;
 }
 
+void level_order_bino_heap(heap_t* heap) {
+    if (heap->head == NULL) {
+        printf("Empty heap\n");
+        return;
+    } 
+
+    bino_node_t* cur = heap->head;
+    Queue* queue = createQueue(100);
+    printf("Min tree from top linked list\n");
+    do {
+        printf("Degree %d: %d ", cur->degree, cur->key);
+        enqueue(queue, cur);
+        while(!isQueueEmpty(queue)) {
+            bino_node_t* node = (bino_node_t*)dequeue(queue);
+            bino_node_t* child_cur = node->child;
+            if (child_cur != NULL) {
+                do {
+                    printf("%d ", child_cur->key);
+                    enqueue(queue, child_cur);
+                    child_cur = child_cur->sibling;
+                } while (child_cur != node->child);
+            }
+        }
+        printf("\n");
+        cur = cur->sibling;
+    } while (cur != heap->head);
+    freeQueue(queue);
+    printf("\n");
+}
+
 void print_bino_heap(heap_t* heap) {
     if (heap->head == NULL) {
         printf("Empty heap\n");
@@ -165,6 +196,7 @@ void print_bino_heap(heap_t* heap) {
         printf("key: %d, degree: %d\n", cur->key, cur->degree);
         cur = cur->sibling;
     } while (cur != heap->head);
+    printf("\n");
 }
 
 void _print_tree_table(bino_node_t* tree_table[]) {
@@ -175,4 +207,5 @@ void _print_tree_table(bino_node_t* tree_table[]) {
             printf("degree %d, key: NULL\n", i);
         }
     }
+    printf("\n");
 }
