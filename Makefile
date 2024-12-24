@@ -75,6 +75,9 @@ hashtable_list: hashing/hashtable_list/main.o hashing/hashtable_list/hashtable_l
 binomial_heap: heap/binomial_heap/main.o heap/binomial_heap/binomial_heap.o queue/general_circular_array_n_slot_queue/general_circular_array_n_slot_queue.o
 	@$(CC) $(CFLAGS) -o $@ $^
 
+fibonacci_heap: heap/fibonacci_heap/main.o heap/fibonacci_heap/fibonacci_heap.o queue/general_circular_array_n_slot_queue/general_circular_array_n_slot_queue.o
+	@$(CC) $(CFLAGS) -o $@ $^
+
 %.o: %.c
 	@$(CC) -c -o $@ $<
 

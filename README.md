@@ -40,6 +40,7 @@ The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makef
   - Deap (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_deap)
   - Min Leftist tree (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_leftist_tree)
   - Binoimial Heap [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/binomial_heap)
+  - Fibonacci Heap [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/fibonacci_heap)
 
 ## Makefile Usage
 ### Stacks
@@ -141,6 +142,10 @@ The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makef
 * Binomial heap [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/heap/binomial_heap/main.c)
     ```bash
     make test TARGET=binomial_heap
+    ```
+* Fibonacci heap [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/heap/fibonacci_heap/main.c)
+    ```bash
+    make test TARGET=fibonacci_heap
     ```
 ### Clean up object and executable files
 ```bash
