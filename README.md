@@ -31,14 +31,15 @@ The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makef
   - DFS [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/dfs)
   - Kruskal's Minimum Spanning Tree [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/graph/Kruskal_mst)
 - **[Hashing](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing)**
-  - Hash Table using linked list [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_list)
+  - Hash Table using Linked List [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_list)
+  - Hash Table using Arrays [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_array)
 - **[Heap Structures](https://github.com/JeepWay/data-structures-in-C/tree/main/heap)**
   - Min Heap (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_heap)
   - Min Heap (int) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/int_min_heap)
   - Max Heap (int) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/int_max_heap)
   - Min-Max Heap (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_max_heap)
   - Deap (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_deap)
-  - Min Leftist tree (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_leftist_tree)
+  - Min Leftist Tree (general) [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/general_min_leftist_tree)
   - Binoimial Heap [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/binomial_heap)
   - Fibonacci Heap [📂](https://github.com/JeepWay/data-structures-in-C/tree/main/heap/fibonacci_heap)
 
@@ -113,6 +114,11 @@ The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makef
 * Hash table using linked list [📃](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_list/main.c)
     ```bash
     make test TARGET=hashtable_list
+    ```
+* Hash table using arrays [📃](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_array/main.c)
+  * If collision occurs during insertion, the key is inserted to next available slot according to linear probing.
+    ```bash
+    make test TARGET=hashtable_array
     ```
 ### Heap Structures
 * Min heap of `general` data type [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/heap/general_min_heap/main.c)
