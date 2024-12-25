@@ -116,10 +116,10 @@ The [`Makefile`](https://github.com/JeepWay/data-structures-in-C/blob/main/Makef
     make test TARGET=hashtable_list
     ```
 * Hash table using arrays [📃](https://github.com/JeepWay/data-structures-in-C/tree/main/hashing/hashtable_array/main.c)
-  * If collision occurs during insertion, the key is inserted to next available slot according to linear probing.
     ```bash
     make test TARGET=hashtable_array
     ```
+  * If collision occurs during insertion, the key is inserted into the next available slot according to linear probing.
 ### Heap Structures
 * Min heap of `general` data type [📃](https://github.com/JeepWay/data-structures-in-C/blob/main/heap/general_min_heap/main.c)
     ```bash
