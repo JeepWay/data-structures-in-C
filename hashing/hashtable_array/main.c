@@ -314,6 +314,65 @@ void test_find_case1() {
     printf("---------------------------------------\n\n");
 }
 
+void test1() {
+    printf("------- Start Test Case1 -------\n");
+    HashTable* ht = createHashTable(17, 1);
+    insert(ht, 6, "data1");
+    insert(ht, 12, "data2");
+    insert(ht, 34, "data3");
+    insert(ht, 29, "data4");
+    insert(ht, 28, "data28");
+    insert(ht, 11, "data11");
+    insert(ht, 23, "data23");
+    insert(ht, 7, "data7");
+    insert(ht, 0, "data0");
+    insert(ht, 33, "data33");
+    insert(ht, 30, "data30");
+    insert(ht, 45, "data45");
+    /* 
+    Bucket  0:    34
+    Bucket  1:     0
+    Bucket  2:    45
+    Bucket  3:  NULL
+    Bucket  4:  NULL
+    Bucket  5:  NULL
+    Bucket  6:     6
+    Bucket  7:    23
+    Bucket  8:     7
+    Bucket  9:  NULL
+    Bucket 10:  NULL
+    Bucket 11:    28
+    Bucket 12:    12
+    Bucket 13:    29
+    Bucket 14:    11
+    Bucket 15:    30
+    Bucket 16:    33
+    */
+    delete(ht, 29);
+    printTable(ht);
+    /* 
+    Bucket  0:    34
+    Bucket  1:     0
+    Bucket  2:  NULL
+    Bucket  3:  NULL
+    Bucket  4:  NULL
+    Bucket  5:  NULL
+    Bucket  6:     6
+    Bucket  7:    23
+    Bucket  8:     7
+    Bucket  9:  NULL
+    Bucket 10:  NULL
+    Bucket 11:    28
+    Bucket 12:    12
+    Bucket 13:    11
+    Bucket 14:    30
+    Bucket 15:    45
+    Bucket 16:    33
+    */
+    freeHashTable(ht);
+    printf("----------------------------------\n\n");
+}
+
 int main() {
     test_insert_case1();
     test_insert_case2();
@@ -324,5 +383,6 @@ int main() {
     test_search_case1();
     test_isIn_case1();
     test_find_case1();
+    test1();
     return 0;
 }
