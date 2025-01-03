@@ -132,6 +132,7 @@ heap_t* delete_fibo_heap(heap_t* heap, int key) {
                 break;
             } else {
                 // remove cur_parent node from the parent's child linked list
+                fibo_node_t* next_parent = cur_parent->parent;
                 fibo_node_t* sib = cur_parent->parent->child;
                 if (cur_parent == sib) { 
                     // cur_parent is the first child
@@ -167,7 +168,7 @@ heap_t* delete_fibo_heap(heap_t* heap, int key) {
                     heap->min = cur_parent;
                 }
                 // move to the upper parent node
-                cur_parent = cur_parent->parent;
+                cur_parent = next_parent;
             }
         }
     }
@@ -251,6 +252,7 @@ heap_t* decrease_key(heap_t* heap, int old_key, int value) {
                 break;
             } else {
                 // remove cur_parent node from the parent's child linked list
+                fibo_node_t* next_parent = cur_parent->parent;
                 fibo_node_t* sibling_cur = cur_parent->parent->child;
                 if (cur_parent == sibling_cur) { 
                     // cur_parent is the first child
@@ -286,7 +288,7 @@ heap_t* decrease_key(heap_t* heap, int old_key, int value) {
                     heap->min = cur_parent;
                 }
                 // move to the upper parent node
-                cur_parent = cur_parent->parent;
+                cur_parent = next_parent;
             }
         }
     }
