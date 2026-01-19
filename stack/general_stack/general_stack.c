@@ -48,8 +48,10 @@ int sizeStack(Stack *s) {
 }
 
 void freeStack(Stack* s) {
-    for (int i = 0; i < s->capacity; i++)
-        free(s->datas[i]);
-    free(s->datas);
-    free(s);
+    if (s != NULL) {
+        if (s->datas != NULL) {
+            free(s->datas);
+        }
+        free(s);
+    }
 }
